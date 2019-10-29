@@ -10,14 +10,16 @@
         <thead>
             <tr>
                 <th scope="col">Customer</th>
+                <th scope="col">Membership Type</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr class="table-active">
-                    <th scope="row"><a href="/Customers/Edit/@item.Id"> @item.Name</a></th>
-                </tr>
+            <tr class="table-active">
+                <th scope="row"><a href="/Customers/Details/@item.Id"> @item.Name</a></th>
+                <th scope="row">@item.MembershipType.Name</th>
+            </tr>
             }
         </tbody>
     </table> 

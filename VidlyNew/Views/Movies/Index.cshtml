@@ -10,14 +10,16 @@
         <thead>
             <tr>
                 <th scope="col">Movie</th>
+                <th scope="col">Genre</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Movies)
             {
-                <tr class="table-active">
-                    <th scope="row"><a href="/Movies/Edit/@item.Id"> @item.Name</a></th>
-                </tr>
+            <tr class="table-active">
+                <th scope="row"><a href="/Movies/Details/@item.Id"> @item.Name</a></th>
+                <th scope="row">@item.Genre</th>
+            </tr>
             }
         </tbody>
     </table> 

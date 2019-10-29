@@ -1,12 +1,25 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModel;
+using VidlyNew.Models;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         // GET: Movie
         public ActionResult Random()
         {
@@ -32,17 +45,22 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-                new Movie{Name = "Shrek",Id=1},
-                new Movie{Name = "Wall-e",Id=1}
-            };
-
+            var movies = _context.Movies.ToList();
             var viewModel = new RandomMovieViewModel()
             {
                 Movies = movies
             };
             return View(viewModel);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+            if (movie != null)
+            {
+                return View(movie);
+            }
+            return HttpNotFound();
         }
 
         [Route("movies/release/{year:regex(\\d{4})}/{month:maxlength(2)}")]
@@ -52,13 +70,6 @@ namespace Vidly.Controllers
             return Content("Year = " + year + " Month = " + month);
         }
 
-        private IEnumerable<Movie> GetMoviess()
-        {
-            return new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Shrek" },
-                new Movie { Id = 2, Name = "Wall-e" }
-            };
-        }
+      
     }
 }
