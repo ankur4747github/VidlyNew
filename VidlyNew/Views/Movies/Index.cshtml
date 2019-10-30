@@ -6,6 +6,10 @@
 
     <h2>Movies</h2>
 
+    <form action="/Movies/New">
+        <input class="btn btn-primary" type="submit" value="NEW MOVIE" />
+    </form>
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -17,8 +21,8 @@
             @foreach (var item in Model.Movies)
             {
             <tr class="table-active">
-                <th scope="row"><a href="/Movies/Details/@item.Id"> @item.Name</a></th>
-                <th scope="row">@item.Genre</th>
+                <th scope="row"><a href="/Movies/Edit/@item.Id"> @item.Name</a></th>
+                <th scope="row">@item.GenreId</th>
             </tr>
             }
         </tbody>
