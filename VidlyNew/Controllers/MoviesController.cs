@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Mvc;
+using System.Data.Entity;
 using Vidly.Models;
 using Vidly.ViewModel;
 using VidlyNew.Models;
@@ -63,7 +64,7 @@ namespace Vidly.Controllers
                 var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
-                movieInDb.Genre = movie.Genre;
+                movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
             }
 

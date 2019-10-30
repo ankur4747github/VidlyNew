@@ -239,6 +239,70 @@
     <Compile Include="Migrations\201910300338372_ChangesInMovie.Designer.cs">
       <DependentUpon>201910300338372_ChangesInMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910300932272_AnyPendingMigration.cs" />
+    <Compile Include="Migrations\201910300932272_AnyPendingMigration.Designer.cs">
+      <DependentUpon>201910300932272_AnyPendingMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300937112_removegenrefrommovies.cs" />
+    <Compile Include="Migrations\201910300937112_removegenrefrommovies.Designer.cs">
+      <DependentUpon>201910300937112_removegenrefrommovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300938453_AddGenreInMovies.cs" />
+    <Compile Include="Migrations\201910300938453_AddGenreInMovies.Designer.cs">
+      <DependentUpon>201910300938453_AddGenreInMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301015550_AnyPendingMigration1.cs" />
+    <Compile Include="Migrations\201910301015550_AnyPendingMigration1.Designer.cs">
+      <DependentUpon>201910301015550_AnyPendingMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301017201_AnyPendingMigration2.cs" />
+    <Compile Include="Migrations\201910301017201_AnyPendingMigration2.Designer.cs">
+      <DependentUpon>201910301017201_AnyPendingMigration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301018585_AnyPendingMigration3.cs" />
+    <Compile Include="Migrations\201910301018585_AnyPendingMigration3.Designer.cs">
+      <DependentUpon>201910301018585_AnyPendingMigration3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301020366_AnyPendingMigration4.cs" />
+    <Compile Include="Migrations\201910301020366_AnyPendingMigration4.Designer.cs">
+      <DependentUpon>201910301020366_AnyPendingMigration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301024023_AnyPendingMigration5.cs" />
+    <Compile Include="Migrations\201910301024023_AnyPendingMigration5.Designer.cs">
+      <DependentUpon>201910301024023_AnyPendingMigration5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301031375_AnyPendingMigration6.cs" />
+    <Compile Include="Migrations\201910301031375_AnyPendingMigration6.Designer.cs">
+      <DependentUpon>201910301031375_AnyPendingMigration6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301059078_pendintitems.cs" />
+    <Compile Include="Migrations\201910301059078_pendintitems.Designer.cs">
+      <DependentUpon>201910301059078_pendintitems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301102483_pendintitems1.cs" />
+    <Compile Include="Migrations\201910301102483_pendintitems1.Designer.cs">
+      <DependentUpon>201910301102483_pendintitems1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301123079_pending.cs" />
+    <Compile Include="Migrations\201910301123079_pending.Designer.cs">
+      <DependentUpon>201910301123079_pending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301123451_pending1.cs" />
+    <Compile Include="Migrations\201910301123451_pending1.Designer.cs">
+      <DependentUpon>201910301123451_pending1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301124266_pending2.cs" />
+    <Compile Include="Migrations\201910301124266_pending2.Designer.cs">
+      <DependentUpon>201910301124266_pending2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301124574_pending3.cs" />
+    <Compile Include="Migrations\201910301124574_pending3.Designer.cs">
+      <DependentUpon>201910301124574_pending3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910301449231_pending4.cs" />
+    <Compile Include="Migrations\201910301449231_pending4.Designer.cs">
+      <DependentUpon>201910301449231_pending4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -384,6 +448,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910300338372_ChangesInMovie.resx">
       <DependentUpon>201910300338372_ChangesInMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300932272_AnyPendingMigration.resx">
+      <DependentUpon>201910300932272_AnyPendingMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300937112_removegenrefrommovies.resx">
+      <DependentUpon>201910300937112_removegenrefrommovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300938453_AddGenreInMovies.resx">
+      <DependentUpon>201910300938453_AddGenreInMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301015550_AnyPendingMigration1.resx">
+      <DependentUpon>201910301015550_AnyPendingMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301017201_AnyPendingMigration2.resx">
+      <DependentUpon>201910301017201_AnyPendingMigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301018585_AnyPendingMigration3.resx">
+      <DependentUpon>201910301018585_AnyPendingMigration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301020366_AnyPendingMigration4.resx">
+      <DependentUpon>201910301020366_AnyPendingMigration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301024023_AnyPendingMigration5.resx">
+      <DependentUpon>201910301024023_AnyPendingMigration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301031375_AnyPendingMigration6.resx">
+      <DependentUpon>201910301031375_AnyPendingMigration6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301059078_pendintitems.resx">
+      <DependentUpon>201910301059078_pendintitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301102483_pendintitems1.resx">
+      <DependentUpon>201910301102483_pendintitems1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301123079_pending.resx">
+      <DependentUpon>201910301123079_pending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301123451_pending1.resx">
+      <DependentUpon>201910301123451_pending1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301124266_pending2.resx">
+      <DependentUpon>201910301124266_pending2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301124574_pending3.resx">
+      <DependentUpon>201910301124574_pending3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301449231_pending4.resx">
+      <DependentUpon>201910301449231_pending4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

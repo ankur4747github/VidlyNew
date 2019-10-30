@@ -22,7 +22,10 @@
             {
             <tr class="table-active">
                 <th scope="row"><a href="/Movies/Edit/@item.Id"> @item.Name</a></th>
-                <th scope="row">@item.GenreId</th>
+                @if (@item.Genre != null)
+                {
+                    <th scope="row">@item.Genre.Name</th>
+                }
             </tr>
             }
         </tbody>
