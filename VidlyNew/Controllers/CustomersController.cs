@@ -25,15 +25,28 @@ namespace Vidly.Controllers
         {
             var viewModel = new CustomerFormViewModel()
             {
-                MemberShipTypes = _context.MemberShipTypes.ToList()
+                MemberShipTypes = _context.MemberShipTypes.ToList(),
+                Customer = new Customer()
+
             };
             return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         //Model Binding
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MemberShipTypes = _context.MemberShipTypes.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
+
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
