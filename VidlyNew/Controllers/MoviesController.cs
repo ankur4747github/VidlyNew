@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Mvc;
-using System.Data.Entity;
 using Vidly.Models;
 using Vidly.ViewModel;
 using VidlyNew.Models;
@@ -24,6 +24,7 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
+
         // GET: Movie
         public ActionResult Random()
         {
@@ -42,6 +43,7 @@ namespace Vidly.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var movie = new Movie();
@@ -86,7 +88,6 @@ namespace Vidly.Controllers
             {
                 Console.WriteLine(ex);
             }
-            
 
             return RedirectToAction("Index", "Movies");
         }
@@ -94,7 +95,7 @@ namespace Vidly.Controllers
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.Single(m => m.Id == id);
-            if(movie == null)
+            if (movie == null)
             {
                 return HttpNotFound();
             }
@@ -115,7 +116,13 @@ namespace Vidly.Controllers
             {
                 Movies = movies
             };
-            return View(viewModel);
+
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+                return View("Index", viewModel);
+            }
+
+            return View("ReadOnlyList", viewModel);
         }
 
         public ActionResult Details(int id)
@@ -128,15 +135,11 @@ namespace Vidly.Controllers
             return HttpNotFound();
         }
 
-
-
         [Route("movies/release/{year:regex(\\d{4})}/{month:maxlength(2)}")]
         //Constraints min max minlenght maxlength int float guid
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content("Year = " + year + " Month = " + month);
         }
-
-      
     }
 }
