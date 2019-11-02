@@ -21,12 +21,20 @@ namespace VidlyNew.Controllers.Api
         }
 
         //GET api/customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            return _context.Customers
-                    .Include(c => c.MembershipType)
-                    .ToList()
-                    .Select(Mapper.Map<Customer, CustomerDto>);
+            var customerQuery = _context.Customers.Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+            {
+                customerQuery = customerQuery.Where(c => c.Name.Contains(query));
+            }
+
+            var customerDto = customerQuery
+                .ToList()
+                .Select(Mapper.Map<Customer, CustomerDto>);
+
+            return Ok(customerDto);
         }
 
         //GET api/customers/1
